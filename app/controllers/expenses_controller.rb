@@ -20,12 +20,12 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
 
     if @expense.save
-      category_ids = params[:expense][:category_ids].reject(@:empty?).map(&:to_i)
+      category_ids = params[:expense][:category_ids].reject(&:empty?).map(&:to_i)
       expense.categories << Category.where(id: category_ids)
       redirect_to @expense, notice: 'Expense was successfully created.'
     else
       render :new
-    end  
+    end
   end
 
   private
