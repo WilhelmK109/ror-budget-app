@@ -21,8 +21,9 @@ class ExpensesController < ApplicationController
 
     if @expense.save
       category_ids = params[:expense][:category_ids].reject(&:empty?).map(&:to_i)
-      expense.categories << Category.where(id: category_ids)
-      redirect_to @expense, notice: 'Expense was successfully created.'
+      @expense.categories << Category.where(id: category_ids)
+      category = Category.find(category_ids.first)
+      redirect_to user_category_path(current_user, category), notice: 'Transaction was successfully created.'
     else
       render :new
     end
@@ -39,6 +40,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :amount, :category_id, category_ids: []).merge(author_id: current_user.id)
+    params.require(:expense).permit(:name, :amount, :category_ids, category_ids: []).merge(author_id: current_user.id)
   end
 end
