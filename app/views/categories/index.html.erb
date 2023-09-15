@@ -1,0 +1,16 @@
+<div class="total-amount">
+  <p>Total amount:</p>
+  <p>$<%= @categories.sum(&:total_amount) %></p>
+</div>
+
+<% if @categories.any? %>
+  <div id="categories">
+    <% @categories.each do |category| %>
+      <ul><%= render category %></ul>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="category-btn">
+  <%= link_to "New category", new_user_category_path(current_user) %>
+</div>

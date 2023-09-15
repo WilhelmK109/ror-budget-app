@@ -1,0 +1,23 @@
+<%= render @category %>
+
+<div class="category-transactions">
+  <h4 class="transactions-title">Transactions</h4>
+  <% if @expenses.empty? %>
+    <p class="no-transaction">No transactions available.</p>
+  <% else %>
+    <div>
+      <% @expenses.each do |expense| %>
+        <% if can? :read, expense %>
+          <div>
+            <p><%= expense.name.capitalize %></p>
+            <p>$<%= expense.amount %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="category-btn">
+  <%= link_to "Add transaction", new_user_expense_path(current_user) %>
+</div>

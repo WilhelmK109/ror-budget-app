@@ -1,0 +1,16 @@
+<%= form_with(model: category, url: user_categories_path) do |f| %>
+  <div class="input-container">
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, placeholder: "Name", required: true %>
+    </div>
+    <div>
+      <%= f.label :icon %>
+      <%= f.text_field :icon, placeholder: "Icon URL", required: true %>
+    </div>
+  </div>
+
+  <div class="category-btn">
+    <%= f.submit %>
+  </div>
+<% end %>
