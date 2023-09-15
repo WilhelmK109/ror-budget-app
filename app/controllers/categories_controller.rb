@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:entities).find(params[:id])
+    @category = Category.includes(:expenses).find(params[:id])
     @expenses = @category.expenses.order(created_at: :desc)
   end
 
