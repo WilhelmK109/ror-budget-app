@@ -1,0 +1,22 @@
+<%= form_with(model: expense, url: user_expenses_path) do |f| %>
+  <div class="input-container">
+    <div class="field">
+      <%= f.text_field :name, required: true, placeholder: 'Name' %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :amount, step: "0.01", required: true, placeholder: 'Amount' %>
+    </div>
+  </div>
+
+  <h2 class="select-category-title">Select a category</h2>
+
+  <div class="select-category">
+    <%= f.select :category_ids, @categories.map { |category| [category.name, category.id] }, { include_blank: false }, { multiple: true, required: true } %>
+  </div>
+  <%= f.hidden_field :category_id, value: params[:category_id] %>
+
+  <div class="category-btn">
+    <%= f.submit 'Create Transaction' %>
+  </div>
+<% end %>
