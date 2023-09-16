@@ -42,6 +42,13 @@ ror-budget-app is a mobile wen application where you can manage your budget. You
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+# Live Demo
+
+- [Live Demo link](https://wilhelm-budget-app.onrender.com/)
+
+# Video Presentation
+
+- [Video presentation](https://drive.google.com/file/d/19xbCtBpJnNQPyQ6cmoGF64H4Y9U8vQce/view?usp=sharing)
 
 <!-- GETTING STARTED -->
 
@@ -111,6 +118,8 @@ If you found this project helpful, consider giving a ⭐️!
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Microverse for giving me this opportunity.
+
+I would like to acknowledge Gregoire Vella on Behance for the original design.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
