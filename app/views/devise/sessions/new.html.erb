@@ -5,14 +5,10 @@
         <div class="login-header header">
           <%= link_to '<i class="fa-solid fa-arrow-left-long"></i>'.html_safe, unauthenticated_root_path %>
         </div>
-      
-        <h4>Login</h4>
-
-        <div class="action">
-          <%= f.submit "Log In" %>
-        </div>
       </div>
     </header>
+
+    <h4>Login</h4>
 
     <div class="input-container">
       <%= f.label :email %><br />
@@ -21,6 +17,11 @@
       <%= f.label :password %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
     </div>
+    
+    <div class="login-action">
+      <%= f.submit "Log In" %>
+    </div>
+
     <div class="forget-password">
       <%= link_to "Forgot password ?", new_user_password_path(current_user) %>
     </div>
