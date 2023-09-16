@@ -4,9 +4,14 @@
 }
 
 .shared_header .header i.fa-magnifying-glass {
-  opacity: 0.2;
+  opacity: 0.7;
 }
 
 .shared_header .header p {
   font-size: 18px;
+}
+
+.fa-solid {
+  width: 100px;
+  cursor: pointer;
 }

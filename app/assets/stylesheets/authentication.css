@@ -43,6 +43,15 @@
   margin-top: 15px;
 }
 
+.login-action input {
+  text-align: center;
+  color: rgb(181, 180, 180);
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
 .authentication form .input-container input {
   width: 100%;
   outline: none;
@@ -69,10 +78,16 @@
   color: rgb(207, 207, 207);
 }
 
-.authentication .forget-password a {
+.authentication .forget-password a,
+.login-action {
   display: block;
   text-align: center;
   color: rgb(181, 180, 180);
   text-decoration: none;
   font-size: 18px;
+}
+
+.login-action {
+  display: block;
+  text-align: center;
 }
