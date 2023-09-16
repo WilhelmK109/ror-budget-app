@@ -5,10 +5,10 @@
   <% if @expenses.empty? %>
     <p class="no-transaction">No transactions available.</p>
   <% else %>
-    <div>
+    <div class="transaction-details-container">
       <% @expenses.each do |expense| %>
         <% if can? :read, expense %>
-          <div>
+          <div class="transaction-details">
             <p><%= expense.name.capitalize %></p>
             <p>$<%= expense.amount %></p>
           </div>
@@ -19,5 +19,5 @@
 </div>
 
 <div class="category-btn">
-  <%= link_to "Add transaction", new_user_expense_path(current_user) %>
+  <%= link_to "ADD TRANSACTION", new_user_expense_path(current_user) %>
 </div>
