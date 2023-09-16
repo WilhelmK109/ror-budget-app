@@ -14,7 +14,7 @@
   <div class="select-category">
     <%= f.select :category_ids, @categories.map { |category| [category.name, category.id] }, { include_blank: false }, { multiple: true, required: true } %>
   </div>
-  <%= f.hidden_field :category_id, value: params[:category_id] %>
+  <%# <%= f.hidden_field :category_id, value: params[:category_id] %> %>
 
   <div class="category-btn">
     <%= f.submit 'CREATE TRANSACTION' %>

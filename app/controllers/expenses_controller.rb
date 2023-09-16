@@ -20,9 +20,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
 
     if @expense.save
-      category_ids = params[:expense][:category_ids].reject(&:empty?).map(&:to_i)
-      @expense.categories << Category.where(id: category_ids)
-      category = Category.find(category_ids.first)
+      category = Category.find(@expense.category_ids.first)
       redirect_to user_category_path(current_user, category), notice: 'Transaction was successfully created.'
     else
       render :new
